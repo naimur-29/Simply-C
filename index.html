@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lexer</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./index.js" defer></script>
+
+    <!-- src/scripts: -->
+    <script src="./src/Types.js" defer></script>
+    <script src="./src/DFA.js" defer></script>
+    <script src="./src/Lexer.js" defer></script>
+  </head>
+  <body>
+    <h1>
+      LEXER BY
+      <a href="https://github.com/naimur-29" target="_blank">@naimur29</a>
+    </h1>
+
+    <div>
+      <p><b>INPUT</b></p>
+      <textarea
+        name="source code"
+        placeholder="Enter your source code here.."
+        class="source-code"
+        id="source-code"
+        cols="34"
+        rows="12"
+      >
+// this function compares two numbers 😲
+txt example(num a, num b) {
+  txt msg1 = "'a' is greater!"
+  txt msg2 = "'b' is greater!"
+  txt msg3 = 'both are equal'
+
+  if (a > b) return msg1
+  else if (b > a) return msg2
+  else return msg3
+}</textarea
+      >
+
+      <div class="button-container">
+        <button class="tokenize-btn" id="tokenize-btn">Tokenize</button>
+        <button class="reset-btn" id="reset-btn">Reset</button>
+      </div>
+    </div>
+
+    <div>
+      <p><b>OUTPUT</b></p>
+      <textarea
+        name="source code"
+        placeholder="click tokenize to perform a lexical analysis on your source code.."
+        class="output"
+        id="output"
+        rows="4"
+      ></textarea>
+    </div>
+  </body>
+</html>

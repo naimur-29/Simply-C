@@ -1,0 +1,120 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 1.2rem;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  scroll-behavior: smooth;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+@media (min-width: 820px) {
+  body {
+    width: calc(100vw - 10px);
+  }
+}
+
+h1,
+a {
+  color: inherit;
+  font-size: 1.4rem;
+  padding: 6px;
+  user-select: none;
+}
+
+a {
+  position: relative;
+  display: inline-block;
+  transition: all 2000ms;
+}
+
+a::before {
+  background-color: #003366;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+  translate: -100% 0;
+  border-radius: 4px 0 0 4px;
+  z-index: -10;
+  transition: all 150ms 300ms;
+}
+
+a::after {
+  background-color: #001f3f;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+  translate: 0% 0;
+  border-radius: 0 4px 4px 0;
+  z-index: -10;
+  transition: all 150ms;
+}
+
+@media (hover: hover) {
+  a:hover {
+    color: #fff;
+    transition: all 0ms;
+  }
+
+  a:hover::before {
+    opacity: 0.7;
+    height: 100%;
+    translate: 0% 0;
+    border-radius: 8px;
+  }
+
+  a:hover::after {
+    opacity: 0;
+    height: 100%;
+    translate: 100% 0;
+  }
+}
+
+button {
+  cursor: pointer;
+  text-transform: uppercase;
+  padding: 4px 12px;
+}
+
+textarea {
+  font-family: monospace, inherit;
+  padding: 10px;
+  resize: none;
+  border: 2px dashed rgba(0, 0, 0, 0.5);
+}
+
+textarea.output {
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 1.7rem;
+  margin-bottom: 20px;
+}
+
+.button-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
